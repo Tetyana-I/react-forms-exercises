@@ -1,44 +1,41 @@
+// The component places the state that contains all of the boxes {id, color, width, height},
+// renders all of the Box components along with the NewBoxForm component
+
 import { useState } from 'react';
-import { v4 as uuid } from 'uuid';
+
 import Box from './Box';
 import NewBoxForm from './NewBoxForm';
 
 
 const BoxList = () => {
-    // const INITIAL_STATE = [
-    //     {color: 'blue', width: 100, height: 100},
-    //     {color: 'green', width: 150, height: 150}
-
-    // ];
-
-
-    // const [boxes, setBoxes] = useState([]);
     const [boxes, setBoxes] = useState([]);
 
-    // display all boxes currently in state
+    // function displays all boxes currently in state
     const renderBoxes = () => {
         return (
             <div className="BoxList">
-                {boxes.map(box => (<Box color={box.color} height={box.height} width={box.width} removeBox={removeBox}/>))}
+                {boxes.map(box => (
+                <Box color={box.color} height={box.height} width={box.width} removeBox={removeBox} id={box.id} key={box.id}
+                />))}
             </div>
         )
     }
 
-    // added a new box to a boxes list
+    // adds a new box to a boxes list in state
     const addBox = (box) => {
         const newBox = {
-            id: uuid(),
+            id: box.id,
             color: box.color,
             width: +box.width,
             height: +box.height
         }
         setBoxes(boxes => [...boxes, newBox]);
-        console.log("boxes", boxes)
     }
 
-    // remove box from the boxes list
-    const removeBox = () => {
-        console.log('Hey!!!');
+    // removes box from the boxes list
+    const removeBox = (box_id) => {
+        const left_boxes = boxes.filter(box => box.id != box_id);
+        setBoxes(left_boxes);
     }
 
     return (
