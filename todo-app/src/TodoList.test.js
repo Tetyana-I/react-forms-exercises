@@ -1,26 +1,25 @@
 import { render, fireEvent } from '@testing-library/react';
-import BoxList from './BoxList';
+import TodoList from './TodoList';
 
 
 test('renders without crashing', () => {
-  render(<BoxList />);
+  render(<TodoList />);
 });
 
 it("matches snapshot", function() {
-  const {asFragment} = render(<BoxList />);
+  const {asFragment} = render(<TodoList />);
   expect(asFragment()).toMatchSnapshot();
 });
 
-it("adds  and removes a box", function () {
-  const { queryByText } = render(<BoxList />);
-  // no boxes are rendered yet
-  const btn = queryByText("Add a new box");
+it("adds and removes todo", function () {
+  const { queryByText } = render(<TodoList />);
+  // no todos are rendered yet
+  const btn = queryByText("Add to a list");
   expect(queryByText("X")).not.toBeInTheDocument();
-  // after clicking "add new box" button, one box is rendered
+  // after clicking "add to a list" button, one todo is rendered
   fireEvent.click(btn);
   expect(queryByText("X")).toBeInTheDocument();
-  // after clicking "remove box" button, no boxes left
+  // after clicking "X" button, no todos left
   fireEvent.click(queryByText("X"));
   expect(queryByText("X")).not.toBeInTheDocument();
 })
-

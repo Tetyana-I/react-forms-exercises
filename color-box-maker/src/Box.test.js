@@ -12,3 +12,5 @@ it("matches snapshot", function() {
   const {asFragment} = render(<Box color='red' height={100} width={100}/>);
   expect(asFragment()).toMatchSnapshot();
 });
+
+

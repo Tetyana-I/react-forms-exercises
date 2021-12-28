@@ -12,6 +12,7 @@ exports[`matches snapshot 1`] = `
       class="NewBoxForm-input"
       id="color"
       name="color"
+      type="text"
       value=""
     />
     <label

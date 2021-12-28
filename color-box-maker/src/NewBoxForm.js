@@ -19,12 +19,12 @@ const NewBoxForm = ({addBox}) => {
 
     // Updates local state with current state of input element
     const handleChange = (evt) => {
-    const { name, value }= evt.target;
-    setFormData(formData => ({
-      ...formData,
-      [name]: value
-    }));
-  };
+        const { name, value }= evt.target;
+        setFormData(formData => ({
+        ...formData,
+        [name]: value
+        }));
+    };
 
     return (
         <form onSubmit={handleSubmit}>
@@ -32,6 +32,7 @@ const NewBoxForm = ({addBox}) => {
             <input className="NewBoxForm-input"
                 id="color"
                 name="color"
+                type="text"
                 value={formData.color}
                 onChange={handleChange}>
             </input>
