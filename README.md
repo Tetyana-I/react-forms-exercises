@@ -1,13 +1,17 @@
 # React Forms Exercises
 
-**Part1 - Color Box Maker**
+**Part 1 - Color Box Maker**
 
-**Part2 - Todo App**
+**Part 2 - Todo App**
 
 
 ### Local Deployment
 
 1. Create an application main directory *react-forms-exercises*
+
+2. Switch to the created directory
+
+    `cd react-forms-exercises`
 
 2. Clone Repository
 
@@ -15,11 +19,11 @@
 
 3. Switch to the one of application directories:
 
-    `cd react-forms-exercises/color-box-maker`
+    `cd color-box-maker`
 
     or:
 
-    `cd react-forms-exercises/todo-app`
+    `cd todo-app`
 
 4. Create dependencies
 
