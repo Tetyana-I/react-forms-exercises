@@ -10,4 +10,3 @@
 - *NewBoxForm* component renders a form that when submitted, creates a new Box. When the form is submitted, clears the input values.
 
 
-
